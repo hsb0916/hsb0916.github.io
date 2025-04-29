@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#container {
+    width: 1200px;
+    text-align: left;
+    display: inline-block;
+}
+.base_img {
+    width: 800px;
+    height: 576px;
+    background-image: url("main.png");
+    background-position: center;
+    display: inline-block;
+}
+.menu {
+    text-align: center;
+}
+.menu li {
+    display: inline-block;
+}
+.menu_img{
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+}
+.cafe {
+    text-align: center;
+}
+.cafe li {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 30px;
+}
+.cafe li > img {
+    border-radius: 30px;
+    width: 300px;
+    height: 194px;
+}
+table {
+    text-align: center;
+    table-layout: fixed;
+    border-collapse: collapse;
+}   
+td,th {
+    width: 200px;    
+    border: solid 3px #BF9A66;
+}
+.brown {
+    background-color: #F4EFE8;
+}
+.deep_brown {
+    background-color: #BF9A66;
+    color: #fff;
+}
+.align_center {
+    text-align: center;
+}
+.recipe {
+    text-align: center;
+}
+.recipe ul {
+    display: inline-block;
+    list-style-type: none;
+}
+.size_auto {
+    display: inline-block;
+    width: auto;
+    height: auto;
+}
+.size_auto li {
+    margin: 30px 0 30px 0;
+}
+.size_auto li::marker {
+    font-size: 24px;
+    font-weight: bold;
+}
+.mayday {
+    background-image: url("https://cdn-optimized.imweb.me/upload/S201712265a41b45332c4f/2c6c83901ac55.png");
+}
+.mayday:hover {
+    background-image: url("https://cdn-optimized.imweb.me/upload/S201712265a41b45332c4f/5e773bbdacab6.jpg");
+}
+.icebreaker {
+    background-image: url("https://cdn-optimized.imweb.me/upload/S201712265a41b45332c4f/4862fda916fab.png");
+}
+.icebreaker:hover {
+    background-image: url("https://cdn-optimized.imweb.me/upload/S201712265a41b45332c4f/7a41c14fe1276.jpg");
+}
+.friday {
+    background-image: url("https://cdn-optimized.imweb.me/upload/S201712265a41b45332c4f/e235017c49af0.png");
+}
+.friday:hover {
+    background-image: url("https://cdn-optimized.imweb.me/upload/S201712265a41b45332c4f/3859d82fc95bc.jpg");
+}
+.eight {
+    background-image: url("https://cdn-optimized.imweb.me/upload/S201712265a41b45332c4f/d217126e97fc3.png");
+}
+.eight:hover {
+    background-image: url("https://cdn-optimized.imweb.me/upload/S201712265a41b45332c4f/65a614c3028cc.jpg");
+}
+.ecuador {
+    background-image: url("https://cdn-optimized.imweb.me/upload/S201712265a41b45332c4f/23b14df1a8739.png");
+}
+.ecuador:hover {
+    background-image: url("https://cdn-optimized.imweb.me/upload/S201712265a41b45332c4f/5cf9b2254ff52.jpg");
+}
+.peru {
+    background-image: url("https://cdn-optimized.imweb.me/upload/S201712265a41b45332c4f/ff9a21f4d1256.png");
+}
+.peru:hover {
+    background-image: url("https://cdn-optimized.imweb.me/upload/S201712265a41b45332c4f/52ffa49c783a0.jpg");
+}
+.ethiopia {
+    background-image: url("https://cdn-optimized.imweb.me/upload/S201712265a41b45332c4f/49ecc6a618836.png");
+}
+.ethiopia:hover {
+    background-image: url("https://cdn-optimized.imweb.me/upload/S201712265a41b45332c4f/82a8d59c491df.jpg");
+}
+.colombia {
+    background-image: url("https://cdn-optimized.imweb.me/upload/S201712265a41b45332c4f/f40902d5effce.png");
+}
+.colombia:hover {
+    background-image: url("https://cdn-optimized.imweb.me/upload/S201712265a41b45332c4f/e5781cc403284.jpg");
+}
+.dc_ethiopia {
+    background-image: url("https://cdn-optimized.imweb.me/upload/S201712265a41b45332c4f/e921d1dbc5c3e.png");
+}
+.dc_ethiopia:hover {
+    background-image: url("https://cdn-optimized.imweb.me/upload/S201712265a41b45332c4f/c79c0abcccf61.jpg");
+}
+.dc_brazil {
+    background-image: url("https://cdn-optimized.imweb.me/upload/S201712265a41b45332c4f/2112a5d7776c7.png");
+}
+.dc_brazil:hover {
+    background-image: url("https://cdn-optimized.imweb.me/upload/S201712265a41b45332c4f/b0a3f72ff65d9.png");
+}
+#link {
+    margin-top: 30px;
+}
+#link li {
+    display: inline;
+}
+#link > li > a:link{
+    color: #fff;
+    text-decoration: none; 
+}
+#link > li > a:visited{
+    color: #fff;
+}
+#link > li > a:hover{
+    color: #4DB848;
+    font-weight: bold;
+    text-decoration: none;
+}
+#link > li > a:active{
+    color: #00ffff;
+}
+.subject {
+    font-weight: 600;
+}
+.study li {
+    display: inline-block;
+}
+.study > li > a:link{
+    color: #0098d9;
+    text-decoration: none; 
+}
+.study > li > a:visited{
+    color: #0098d9;
+}
+.study > li > a:hover{
+    color: #4DB848;
+    font-weight: bold;
+    text-decoration: none;
+}
+.study > li > a:active{
+    color: #00ffff;
+}
