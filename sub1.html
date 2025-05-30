@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .diary_nav {
+            width: 25%;
+            border: 2px solid #9A88DB;
+            margin-right: 10px;
+            padding: 10px;
+            float: left;
+            height: 75%;
+        }
+        .diary_section {
+            border: 2px solid #9A88DB;
+            padding: 10px;
+            float: left;
+            height: 75%;
+            width: 50%;
+        }
+        textarea {
+            width: 60%;
+            height: 200px;
+            margin-top: 10px;
+        }
+        #save {
+            text-align: right;
+            margin-left: 10px;
+            color: #5543E4;
+        }
+        .container {
+            border: 1px solid #9A88DB;
+            margin: 1em 2em;
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            gap: 4em;
+            padding: 2em;
+            border-radius: 8px;
+            min-height: 300px;
+            overflow-y: auto;
+        }
+        .date_item {
+            cursor: pointer;
+            color: #9A88DB;
+            margin: 5px 0;
+        }
+        .date_item:hover {
+            text-decoration: underline;
+        }
+        #diaryText {
+            padding: 1em;
+        }
+        @media (max-width: 800px) {
+            .container {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 1em;
+                gap: 1.5em;
+            }
+
+            .diary_nav {
+                width: 100%;
+                float: none;
+                margin-right: 0;
+                height: auto;
+                box-sizing: border-box;
+            }
+
+            .diary_section {
+                width: 100%;
+                float: none;
+                height: auto;
+                box-sizing: border-box;
+            }
+
+            textarea {
+                width: 100%;
+                height: 150px;
+                font-size: 1em;
+                box-sizing: border-box;
+            }
+
+            #save {
+                display: block;
+                margin: 1em 0 0 auto;
+                font-size: 1em;
+            }
+        }
+    </style>
+    <title>감정 일기장</title>
+</head>
+<body>
+    <header>
+        <div class="sub_header">
+            <img src="img/sub_logo.png">
+            <ul class="menu">
+                <li><a href="index.html">홈</a></li>
+                <li><a href="sub1.html"><span class="on_page">감정 일기장</span></a></li>
+                <li><a href="sub2.html">오늘의 명언</a></li>
+                <li><a href="sub3.html">감성 사운드룸</a></li>
+                <li><a href="sub4.html">컬러 심리 테스트</a></li>
+                <li><a href="sub5.html">감정 모래시계</a></li>
+            </ul>
+        </div>
+    </header>
+    <section>
+        <article class="container">
+                <div class="diary_nav">
+                <strong>감정 일기장</strong>
+                <div id="dateList"></div>
+                </div>
+                <div class="diary_section">
+                    <h3>오늘의 감정 일기</h3>
+                    <textarea id="diaryText" placeholder="오늘의 감정을 적어보세요..."></textarea>
+                    <button type="button" id="save">수정/저장</button>
+                </div>
+        </article>
+    </section>
+    <footer>
+        <article id="address">
+            <ul class="company_info">
+                <li>Eunoia Inc.</li>
+                <li>대표이사:한승범</li>
+                <li>주소:경기 성남시 수정구 복정동 495 303호</li>
+                <li>전화:(02)123-4567 FAX:(02)987-6543</li>
+                <li class="copyright">Copyright by Eunoia Incorperated Some Rights Reserved</li>
+            </ul>
+        </article>
+        <article class="link">
+            <h3>고객센터 1588-1234</h3>
+        </article>
+    </footer>
+    <script>
+        const saveBtn = document.getElementById('save');
+        const diaryText = document.getElementById('diaryText');
+        const dateList = document.getElementById('dateList');
+        const diaryHeader = document.querySelector('.diary_section h3');
+        let selectedDate = null;
+
+        function getCurrentDate() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        }
+
+        function loadDiaryList() {
+            dateList.innerHTML = '';
+            const keys = Object.keys(localStorage).sort().reverse();
+            keys.forEach(key => {
+                const div = document.createElement('div');
+                div.className = 'date_item';
+                div.textContent = key;
+                div.addEventListener('click', () => {
+                    selectedDate = key;
+                    const today = getCurrentDate();
+                    diaryText.value = localStorage.getItem(key);
+                    diaryHeader.textContent = (key === today)
+                        ? '오늘의 감정 일기'
+                        : `${key} 감정 일기`;
+                });
+                dateList.appendChild(div);
+            });
+        }
+
+        saveBtn.addEventListener('click', () => {
+            const date = selectedDate || getCurrentDate();
+            const content = diaryText.value.trim();
+            if (content === '') {
+                alert('내용을 입력해주세요!');
+                return;
+            }
+            localStorage.setItem(date, content);
+            diaryText.value = '';
+            selectedDate = null;
+            loadDiaryList();
+            alert(`${date} 일기가 저장되었습니다.`);
+        });
+        window.addEventListener('DOMContentLoaded', loadDiaryList);
+        
+    </script>
+</body>
+</html>

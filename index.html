@@ -2,42 +2,131 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="style.css" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @font-face {
+            font-family: 'somi';
+            src: url('font/NanumSomice.ttf');
+        }
+        .main_logo {
+            background-color: #9A88DB;
+            text-align: center;
+        }
+        .main_logo img {
+            width: 25%;
+        }
+        .top_menu {
+            width: 100%;
+            background-color: #9A88DB;
+            color: #fff;
+            font-size: 1.5vw;
+            text-align: center;
+        }
+        .top_menu ul {
+            margin: 0;
+            padding: 0;
+        }
+        .menus li {
+            display: inline;
+            margin: 0 2% 0 2%;
+        }
+        .menus li>a {
+            text-decoration: none;
+        }
+        .menus li>a:link {
+            color: #fff;
+        }
+        .menus li>a:visited {
+            color: #fff;
+        }
+        .menus li>a:hover {
+            background-color: #fff;
+            color: #9A88DB;
+        }
+        .slogan {
+            color: #5543E4;
+            text-align: center;
+            font-family: 'somi';
+        }
+        .explain {
+            width: 70%;
+            margin: 0 auto;
+            text-align: center;
+            color: #9A88DB;
+        }
+        .explain p {
+            margin-bottom: 2vh;
+            text-align: justify;
+        }
+        .main_page article {
+            margin-top: 3em;
+            margin-bottom: 3em;
+        }
+        @media (max-width: 800px) {
+            .top_menu {
+                font-size: 4vw; 
+                padding: 1vh 0;
+            }
+            .menus li {
+                display: block;
+                margin: 0.5em 0;
+            }
+            .main_logo img {
+                width: 50vw;
+                max-width: 150px;
+                height: auto;
+            }
+            .explain {
+                width: 90%;
+                font-size: 14px;
+                margin: 0 auto;
+                text-align: justify;
+            }
+            .slogan {
+                font-size: 5vw;
+            }
+            }
+    </style>
+    <title>Eunoia 홈페이지</title>
 </head>
 <body>
-    <div class="align_center">
-        <div>
-            <ul class="study">
-                <li><a href="index.html">index</a> | </li>
-                <li><a href="book.html">book</a> | </li>
-                <li><a href="inline_block.html">inline&block</a> | </li>
-                <li><a href="display_inline.html">display inline</a> | </li>
-                <li><a href="display_block.html">display block</a> | </li>
-                <li><a href="display_inlineblock.html">display inline-block</a></li>
+    <header>
+        <div class="main_logo"><img src="img/logo.png"></div>
+    </header>
+    <nav>
+        <div class="top_menu">
+            <ul class="menus">
+                <li><a href="sub1.html">감정 일기장</a></li>
+                <li><a href="sub2.html">오늘의 명언</a></li>
+                <li><a href="sub3.html">감성 사운드룸</a></li>
+                <li><a href="sub4.html">컬러 심리 테스트</a></li>
+                <li><a href="sub5.html">감정 모래시계</a></li>
             </ul>
         </div>
-        <div class="base_img">
-            <ul id="link">
-                <li><a href="index.html">소개</a> | </li>
-                <li><a href="espresso.html">Espresso</a> | </li>
-                <li><a href="singleorigin.html">Single Origin</a> | </li>
-                <li><a href="recipe.html">Recipe</a> | </li>
-                <li><a href="cafe.html">Cafe</a></li>
+    </nav>
+    <section class="main_page">
+        <article>
+            <h2 class="slogan">"마음이 머무는 곳, 당신의 감정을 위한 공간"</h2>
+        </article>
+        <article class="explain">
+            <p><span style="color: #5543E4; font-weight: bold;">보라색</span>은 심리학적으로 볼 때 외향적 심리를 나타내는 빨강과 구심적 심리를 나타내는 파랑이 혼합된 색으로서 대립되는 양면성의 감정이 혼재하는 심리를 나타내는 색입니다.</p>
+            <p>본 사이트는 감정의 흐름을 자연스럽게 표현하여 글쓰기, 감정 관련 명언 카드, 컬러 심리 테스트, 그리고 감정 모래시계로 감정의 숨 고르기 등 복잡한 분석이나 기록 없이 오직 지금 이 순간의 감정에 집중하여 사용자 스스로 감정을 이해하고 내려놓을 수 있도록 안내하는 감성 힐링 사이트입니다.</p>
+        </article>
+    </section>
+    <footer>
+        <article id="address">
+            <ul class="company_info">
+                <li>Eunoia Inc.</li>
+                <li>대표이사:한승범</li>
+                <li>주소:경기 성남시 수정구 복정동 495 303호</li>
+                <li>전화:(02)123-4567 FAX:(02)987-6543</li>
+                <li class="copyright">Copyright by Eunoia Incorperated Some Rights Reserved</li>
             </ul>
-        </div>
-        <div id="container">
-            <h2>1. 소개</h2>
-            <br><br>
-            <p>센터 커피는 커피로 다양한 이야기를 들려 드리려고 합니다.</p>
-            <br><br>
-            <p>몸에 좋은 커피는 어떤 커피인지, 어떤 곳에서 어떤 농부가 만드는지, 어떻게 로스팅이 되는지, 좋은 재료부터 가장 최고로 맛을 내기 위한 열정과 과정을 이야기 하고자 합니다. 그리고 여러분에게 전세계 다양한 커피를 경험하게 해 드리려고 합니다.</p>
-            <br><br>
-            <p>센터 커피는 전세계 최고의 커피를 만날 수 있는 스페셜티 커피 전문점입니다.</p>
-            <br><br>
-            <p>영국 프리미엄 로스터리인 스퀘어마일에서 수석 로스터를 지냈고, 영국 브루어스컵 대회와 세계 대회에서 우승하며 세계적인 로스팅 실력을 인정받은 박상호 로스터가 각 원두의 개성을 살려 직접 로스팅하며, 커피에 대한 풍부하고 다양한 정보와 출중한 실력을 갖춘 전물 바리스타가 매력적인 아로마와 풍미를 더한 스페셜 티를 제공합니다.</p>
-            <br><br><br>
-            <p class="align_center">CENTER COFFEE : 일상의 작은 사치</p>
-        </div>
-    </div>
+        </article>
+        <article class="link">
+            <h3>고객센터 1588-1234</h3>
+        </article>
+    </footer>
 </body>
 </html>
