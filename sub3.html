@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>감성 사운드룸</title>
+    <style>
+        #video_player {
+            width:70%;
+            margin: 0 auto;
+        }
+        #video_iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+            display: block;
+            border-radius: 16px;
+            border: none;
+        }
+        #audio_iframe {
+            width: 0;
+            height: 0;
+            border: none;
+        }
+        #container {
+            border: 1px solid #9A88DB;
+            margin: 1em 2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2em;
+            border-radius: 8px;
+            flex-direction: column;
+        }
+        #playAudioBtn {
+            color: #9A88DB;
+            font-weight: bold;
+        }
+        @media (max-width: 800px) {
+            #video_player {
+                width: 95%;
+            }
+            #video_iframe {
+                aspect-ratio: 16 / 9;
+                border-radius: 12px;
+            }
+            #container {
+                margin: 1em 1em;
+                padding: 1.5em 1em;
+            }
+            #playAudioBtn {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="sub_header">
+            <img src="img/sub_logo.png">
+            <ul class="menu">
+                <li><a href="index.html">마음의 시작</a></li>
+                <li><a href="sub1.html">감정 일기장</a></li>
+                <li><a href="sub2.html">오늘의 명언</a></li>
+                <li><a href="sub3.html"><span class="on_page">감성 사운드룸</span></a></li>
+                <li><a href="sub4.html">컬러 심리 테스트</a></li>
+                <li><a href="sub5.html">감정 모래시계</a></li>
+            </ul>
+        </div>
+    </header>
+    <section>
+        <div id="container">
+            <div id="video_player">
+                <iframe id="video_iframe" allow="autoplay"></iframe>
+            </div>
+            <div id="audio_player">
+                <iframe id="audio_iframe" allow="autoplay"></iframe>
+            </div>
+            <button id="playAudioBtn">감성 음악 재생</button>
+        </div>
+    </section>
+    <footer>
+        <article id="address">
+            <ul class="company_info">
+                <li>Eunoia Inc.</li>
+                <li>대표이사:한승범</li>
+                <li>주소:경기 성남시 수정구 복정동 495 303호</li>
+                <li>전화:(02)123-4567 FAX:(02)987-6543</li>
+                <li class="copyright">Copyright by Eunoia Incorperated Some Rights Reserved</li>
+            </ul>
+        </article>
+        <article class="link">
+            <h3>고객센터 1588-1234</h3>
+        </article>
+    </footer>
+    <script>
+        const videoLinks = [
+          "https://www.youtube.com/embed/M7paawTb2_Q?autoplay=1&mute=1&controls=0",
+          "https://www.youtube.com/embed/GdruebCOY8A?autoplay=1&mute=1&controls=0",
+          "https://www.youtube.com/embed/zBXOZ_SvUqA?autoplay=1&mute=1&controls=0"
+        ];
+    
+        const audioLinks = [
+          "https://www.youtube.com/embed/7T7VW3sxDD8?autoplay=1",
+          "https://www.youtube.com/embed/JtppPqK80wQ?autoplay=1",
+          "https://www.youtube.com/embed/ZLtuQIUrS_I?autoplay=1",
+          "https://www.youtube.com/embed/oNyKHRzKG4o?autoplay=1",
+          "https://www.youtube.com/embed/27fpa5m5Kis?autoplay=1"
+        ];
+    
+        const audioIframe = document.getElementById("audio_iframe");
+        const videoIframe = document.getElementById("video_iframe");
+        const playAudioBtn = document.getElementById("playAudioBtn");
+
+        const randomVideo = Math.floor(Math.random() * videoLinks.length);
+        videoIframe.src = videoLinks[randomVideo];
+
+        playAudioBtn.addEventListener("click", () => {
+          const randomIndex = Math.floor(Math.random() * audioLinks.length);
+          audioIframe.src = audioLinks[randomIndex];
+        });
+      </script>
+</body>
+</html>
